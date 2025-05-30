@@ -137,6 +137,20 @@ IRCTC/
 
 ---
 
+## 📄 .env.example
+
+```env
+# Server Port
+PORT=3000
+
+# PostgreSQL Database URL
+DATABASE_URL=postgres://your_username:your_password@localhost:5432/your_database_name
+
+# JWT Secret for signing tokens
+JWT_SECRET=your_jwt_secret_here
+
+# Admin API Key for admin-only routes
+ADMIN_API_KEY=your_admin_api_key_here
 
 
 
