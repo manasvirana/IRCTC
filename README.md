@@ -35,7 +35,7 @@ psql -U your_username -d your_database -f schema.sql
 5. **Start the server**
 
 ```bash
-npm start
+npm run dev
 ```
 
 The API will be available at `http://localhost:3000`
@@ -151,6 +151,13 @@ JWT_SECRET=your_jwt_secret_here
 
 # Admin API Key for admin-only routes
 ADMIN_API_KEY=your_admin_api_key_here
+```
+### ⚠️ Note on Admin Authentication
 
+In this project, admin-only routes (like adding trains) are protected by requiring an API key (`x-api-key` header). However, during user registration and login, the admin API key is **not** required. Instead, users can be assigned the role `"admin"` or `"user"` via the registration request.
+
+This design keeps the authentication flow straightforward and meets the project requirements. For a real-world system, admin registration and login could also verify the API key, and role-based access control can be strengthened by checking user roles in JWT tokens.
+
+This note is added to clarify the current approach and possible future improvements.
 
 
